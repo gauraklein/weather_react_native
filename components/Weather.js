@@ -8,7 +8,7 @@ const Weather = ({ weather, temperature }) => {
     <View style={styles.weatherContainer}>
       <View style={styles.headerContainer}>
         <MaterialCommunityIcons size={48} name="weather-sunny" color={'#fff'} />
-  <Text style={styles.tempText}>{ temperature.toPrecision(2)}˚</Text>
+  <Text style={styles.tempText}>{ Math.round(temperature)}˚</Text>
       </View>
       <View style={styles.bodyContainer}>
         <Text style={styles.title}>{weather}</Text>
