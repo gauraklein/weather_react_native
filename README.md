@@ -3,7 +3,7 @@
 ![App Demo](appdemo.gif)
 
 
-This repo was created to begin to learn React Native, through this project I was able to expand my understanding of how React Native works as well as how powerful of a tool it is. 
+This repo was created to begin to learn React Native. Through the development process I was able to expand my understanding of how React Native works as well as how powerful of a tool it is. 
 
 ## Technologies Used
 - React Native
