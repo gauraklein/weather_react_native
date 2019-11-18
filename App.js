@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Weather from './components/Weather.js';
-import { API_KEY } from './util/weatherApi'
+import { API_KEY } from './utils/weatherApi.js'
 
 export default class App extends React.Component {
   state = {
@@ -15,10 +15,11 @@ export default class App extends React.Component {
     navigator.geolocation.getCurrentPosition(
       position => {
         this.fetchWeather(position.coords.latitude, position.coords.longitude);
+        console.log("fetch ran")
       },
       error => {
         this.setState({
-          error: 'Error Gettig Weather Condtions'
+          error: 'Error Getting Weather Condtions'
         });
       }
     );
@@ -30,7 +31,7 @@ export default class App extends React.Component {
     )
       .then(res => res.json())
       .then(json => {
-        // console.log(json);
+        console.log(json);
         this.setState({
           temperature: (json.main.temp * 1.8) + 32,
           weatherCondition: json.weather[0].main,
@@ -40,16 +41,10 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { isLoading, weatherCondition, temperature } = this.state;
+    const { isLoading } = this.state;
     return (
       <View style={styles.container}>
-        {isLoading ? (
-          <View style={styles.loadingContainer}>
-            <Text style={styles.loadingText}>Fetching The Weather</Text>
-          </View>
-        ) : (
-          <Weather weather={weatherCondition} temperature={temperature} />
-        )}
+        {isLoading ? <Text>Fetching The Weather</Text> : <Weather weather={ weatherCondition } temperature={ temperature } />}
       </View>
     );
   }
