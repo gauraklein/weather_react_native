@@ -1,15 +1,14 @@
-# React Native Weather App
-
-### This repo was used to get my feet wet with react native. It is based on a tutorial by Aman Mittal.
-
+### React Native Weather App
 ---
+![App Demo](appdemo.gif)
 
-Through this project I deepened my understanding of how React Native works as well as how powerful of a tool it is. 
 
-**Technologies Used**
+This repo was created to begin to learn React Native, through this project I was able to expand my understanding of how React Native works as well as how powerful of a tool it is. 
+
+## Technologies Used
 - React Native
 - Expo
 - Node.js
 - OpenWeather API
 
-*You can find Aman's tutorial [here](https://blog.expo.io/building-a-minimalist-weather-app-with-react-native-and-expo-fe7066e02c09)*
+*This project is based on a tutorial by Aman Mittal which you can find [here](https://blog.expo.io/building-a-minimalist-weather-app-with-react-native-and-expo-fe7066e02c09)*
