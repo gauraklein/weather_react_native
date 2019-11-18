@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import PropTypes from 'prop-types';
-import { weatherConditions } from '../utils/weatherConditions.js.js';
+import { weatherConditions } from '../util/weatherConditions.js';
 
 // console.log("this is weatherConditions", weatherConditions["Clear"])
 

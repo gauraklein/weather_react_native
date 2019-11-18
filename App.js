@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Weather from './components/Weather.js';
-import { API_KEY } from './utils/weatherApi.js'
+import { API_KEY } from './util/weatherApi.js'
 
 export default class App extends React.Component {
   state = {
