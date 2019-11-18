@@ -1,6 +1,6 @@
 # React Native Weather App
 
-### This repo was used to get my feet wet with react native. It is based on a tutorial by Aman Mittal
+### This repo was used to get my feet wet with react native. It is based on a tutorial by Aman Mittal.
 
 ---
 
