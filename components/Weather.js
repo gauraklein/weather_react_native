@@ -7,24 +7,37 @@ import { weatherConditions } from '../util/weatherConditions.js';
 // console.log("this is weatherConditions", weatherConditions["Clear"])
 
 const Weather = ({ weather, temperature }) => {
+  console.log('this is the weatherconditions obj', weatherConditions[weather])
     return (
-      <View style={styles.weatherContainer}>
+      <View
+      style={[
+        styles.weatherContainer,
+        { backgroundColor: weatherConditions[weather].color }
+      ]}
+    >
         <View style={styles.headerContainer}>
-          <MaterialCommunityIcons size={48} name="weather-sunny" color={'#fff'} />
+        <MaterialCommunityIcons
+          size={72}
+          name={weatherConditions[weather].icon}
+          color={'#fff'}
+          
+        />
           <Text style={styles.tempText}>{temperature}˚</Text>
         </View>
         <View style={styles.bodyContainer}>
-          <Text style={styles.title}>{weather}</Text>
-          <Text style={styles.subtitle}>It hurts my eyes!</Text>
-        </View>
+        <Text style={styles.title}>{weatherConditions[weather].title}</Text>
+        <Text style={styles.subtitle}>
+          {weatherConditions[weather].subtitle}
+        </Text>
       </View>
-    );
-  };
+    </View>
+  );
+};
 
-// Weather.propTypes = {
-//   temperature: PropTypes.number.isRequired,
-//   weather: PropTypes.string
-// };
+Weather.propTypes = {
+  temperature: PropTypes.number.isRequired,
+  weather: PropTypes.string
+};
 
 
 const styles = StyleSheet.create({
@@ -41,11 +54,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: "row"
     // borderWidth: 5
   },
   tempText: {
     fontSize: 48,
-    color: '#fff'
+    color: '#fff',
+    paddingLeft: 15
   },
   bodyContainer: {
     flex: 2,

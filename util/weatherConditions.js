@@ -13,7 +13,7 @@ export const weatherConditions = {
     },
     Thunderstorm: {
       color: '#616161',
-      title: "A storm is brewing",
+      title: "A Storm is Brewing",
       subtitle: 'Get inside if you can!',
       icon: 'weather-lightning'
     },
@@ -23,7 +23,6 @@ export const weatherConditions = {
       subtitle: 'Everywhere',
       icon: 'weather-cloudy'
     },
-  
     Snow: {
       color: '#00d2ff',
       title: 'Snow',

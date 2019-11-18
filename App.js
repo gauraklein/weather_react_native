@@ -5,7 +5,7 @@ import { API_KEY } from './util/weatherApi.js'
 
 export default class App extends React.Component {
   state = {
-    isLoading: false,
+    isLoading: true,
     temperature: 0,
     weatherCondition: null,
     error: null
@@ -15,7 +15,7 @@ export default class App extends React.Component {
     navigator.geolocation.getCurrentPosition(
       position => {
         this.fetchWeather(position.coords.latitude, position.coords.longitude);
-        console.log("fetch ran")
+        // console.log("fetch ran")
       },
       error => {
         this.setState({
@@ -31,7 +31,7 @@ export default class App extends React.Component {
     )
       .then(res => res.json())
       .then(json => {
-        console.log(json);
+        // console.log(json);
         this.setState({
           temperature: (json.main.temp * 1.8) + 32,
           weatherCondition: json.weather[0].main,
@@ -42,9 +42,10 @@ export default class App extends React.Component {
 
   render() {
     const { isLoading } = this.state;
+    // console.log(this.state.weatherCondition)
     return (
       <View style={styles.container}>
-        {isLoading ? <Text>Fetching The Weather</Text> : <Weather weather={ weatherCondition } temperature={ temperature } />}
+        {isLoading ? <Text>Fetching The Weather</Text> : <Weather weather={ this.state.weatherCondition } temperature={ Math.round(this.state.temperature) } />}
       </View>
     );
   }
